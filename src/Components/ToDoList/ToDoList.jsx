@@ -37,7 +37,7 @@ const Wrapper = styled.section`
     width: 100%;
     max-width: 500px;
     height: 80vh;
-    overflow-y: scroll;
+    overflow-y: auto;
     margin: 50px auto 0;
     background-color: #fff;
     border: 2px solid #000;
