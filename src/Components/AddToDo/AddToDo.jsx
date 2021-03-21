@@ -4,7 +4,6 @@ import { idGenerator } from '../../helpers/id-generator';
 import { addToDo } from '../../reducers/todolist-reducer';
 import { Button, Input } from '../common/FormElements';
 
-
 const AddToDo = ( { className, dispatch, wrapperRef }) => {
     let [text, setText] = useState('');
     let [error, setError] = useState(null);

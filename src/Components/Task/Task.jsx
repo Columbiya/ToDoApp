@@ -3,6 +3,26 @@ import styled, { keyframes } from 'styled-components';
 import { deleteTask, toggleTask } from '../../reducers/todolist-reducer';
 import { Button, Input } from '../common/FormElements';
 
+const Task = ({ done, id, text, dispatch }) => {
+    const onToggleTask = e => {
+        if (e.target.tagName === 'BUTTON') return;
+
+        dispatch(toggleTask(id));
+    };
+
+    const onDeleteTask = e => {
+        dispatch(deleteTask(id));
+    };
+
+    return (
+        <Container onClick={onToggleTask}>
+            <Input type={'checkbox'} checked={done} />
+            <Paragraph>{text}</Paragraph>
+            <Button onClick={onDeleteTask}>&#10008;</Button>
+        </Container>
+    );
+};
+
 const fadeIn = keyframes`
     from {
         opacity: 0;
@@ -38,26 +58,5 @@ const Paragraph = styled.p`
     display: inline;
     margin-left: 15px;
 `;
-
-
-const Task = ({ done, id, text, dispatch }) => {
-    const onToggleTask = e => {
-        if (e.target.tagName === 'BUTTON') return;
-
-        dispatch(toggleTask(id));
-    };
-
-    const onDeleteTask = e => {
-        dispatch(deleteTask(id));
-    };
-
-    return (
-        <Container onClick={onToggleTask}>
-            <Input type={'checkbox'} checked={done} />
-            <Paragraph>{text}</Paragraph>
-            <Button onClick={onDeleteTask}>&#10008;</Button>
-        </Container>
-    );
-};
 
 export default Task;
