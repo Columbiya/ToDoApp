@@ -41,6 +41,7 @@ const Wrapper = styled.section`
     margin: 50px auto 0;
     background-color: #fff;
     border: 2px solid #000;
+    border-radius: 50px;
 
     box-shadow: 20px 20px 25px rgba(0, 0, 0, 0.6);
 
